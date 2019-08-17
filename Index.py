@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import os
 from bottle import TEMPLATE_PATH, jinja2_template as template
 from bottle import run, route, static_file
@@ -21,12 +22,16 @@ def index():
 
 @route('/Buttons')
 def buttons():
-    return template('views/Admin/Buttons')
+    with open("data/buttons.json", "r") as f:
+        data = json.load(f)
+    return template('views/Admin/Buttons', data=data)
 
 
 @route('/Status')
 def status():
-    return template('views/Admin/Status')
+    with open("data/status.json", "r") as f:
+        data = json.load(f)
+    return template('views/Admin/Status', data=data)
 
 
 if __name__ == "__main__":

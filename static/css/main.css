@@ -13,7 +13,7 @@ body {
 
 }
 
-#main {
+#main,#buttons,#status {
     text-align: center;
 }
 
@@ -34,6 +34,32 @@ body {
     background-attachment: fixed;
     opacity: .3;
     z-index: -1;
+}
+
+.dt_box {
+
+}
+
+.dt_header{
+    display: flex;
+    justify-content: center;
+    margin: 10px 5px;
+}
+
+.dt_item{
+    display: flex;
+    justify-content: center;
+    margin: 10px 5px;
+}
+
+.dt_col_1, .dt_col_2, .dt_col_3, .dt_col_4, .dt_col_5{
+    width: 100px;
+    margin: 5px;
+}
+
+#buttons .dt_col_2,
+#buttons .dt_col_4{
+    width: 200px;
 }
 
 .HiddenCheckbox {

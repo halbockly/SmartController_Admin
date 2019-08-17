@@ -1,5 +1,22 @@
 {% include "views/Admin/_header.html" %}
-<section id="main">
-
+<section id="buttons">
+    <div class="dt_box">
+        <div class="dt_header">
+            <div class="dt_col_1">Machine ID</div>
+            <div class="dt_col_2">Name</div>
+            <div class="dt_col_3">Action</div>
+            <div class="dt_col_4">Signal</div>
+            <div class="dt_col_5"></div>
+        </div>
+        {% for item in data %}
+        <div class="dt_item">
+            <div class="dt_col_1">{{ item }}</div>
+            <div class="dt_col_2">{{ data[item]["name"] }}</div>
+            <div class="dt_col_3">{{ data[item]["action"] }}</div>
+            <div class="dt_col_4">{{ data[item]["sig"] }}</div>
+            <div class="dt_col_5">Edit</div>
+        </div>
+        {% endfor %}
+    </div>
 </section>
 {% include "views/Admin/_footer.html" %}
