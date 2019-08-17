@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import json
 import os
-from bottle import TEMPLATE_PATH, jinja2_template as template
+from bottle import TEMPLATE_PATH, jinja2_template as template, redirect
 from bottle import run, route, static_file
 
 # index.pyが設置されているディレクトリの絶対パスを取得
@@ -33,6 +33,19 @@ def status():
         data = json.load(f)
     return template('views/Admin/Status', data=data)
 
+
+@route('/SaveButton')
+def save_button():
+    with open("data/status.json", "r") as f:
+        data = json.load(f)
+    redirect("/")
+
+
+@route('/SaveStatus')
+def save_status():
+    with open("data/status.json", "r") as f:
+        data = json.load(f)
+    redirect("/")
 
 if __name__ == "__main__":
     run(host="localhost", port=8080, debug=True, reloader=True)
