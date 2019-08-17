@@ -14,7 +14,7 @@ def server_static(_dir, _filename):
     return static_file(_filename, root='./static/' + _dir + '/')
 
 
-@route('/Home')
+@route('/')
 def index():
     return template('views/Admin/Home')
 
