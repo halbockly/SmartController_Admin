@@ -1,16 +1,16 @@
 {
   "1": {
-    "name": "[エアコン]　living",
+    "name": "[エアコン]　living A",
     "action": "Switch",
     "sig": "000000000000000000"
   },
   "2": {
-    "name": "[エアコン]　living",
+    "name": "[エアコン]　living B",
     "action": "Switch",
     "sig": "000000000000000000"
   },
   "3": {
-    "name": "[エアコン]　living",
+    "name": "[エアコン]　living C",
     "action": "Switch",
     "sig": "000000000000000000"
   }

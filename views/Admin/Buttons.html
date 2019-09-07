@@ -1,4 +1,5 @@
 {% include "views/Admin/_header.html" %}
+<script src="static/js/buttons.js"></script>
 <section id="buttons">
     <div class="dt_box">
         <div class="dt_header">
@@ -15,26 +16,30 @@
             <div class="dt_col_3">{{ data[item]["action"] }}</div>
             <div class="dt_col_4">{{ data[item]["sig"] }}</div>
             <div class="dt_col_5">
-                Edit
+                <button class="edit_btn">Edit</button>
             </div>
         </div>
         {% endfor %}
     </div>
     <div class="edit_box">
-        <form name="edit_buttons" method="POST" action="SaveButtons" >
-            <div>
-                <label>Name : </label><input type="text" name="Name"/>
-            </div>
-            <div>
-                <label>Action : </label><input type="text" name="Action"/>
-            </div>
-            <div>
-                <label>Signal : </label><input type="text" name="Signal"/>
-            </div>
-            <div>
-                <input type="submit" value="Submit"/>
-            </div>
-        </form>
+        <div class="edit_form">
+            <form name="edit_buttons" method="POST" action="SaveButtons" >
+                <label>Edit Machine ID : <span class="mchn_id"></span></label>
+                <div class="form_elem">
+                    <label>Name : </label><input class="ed_col_2" type="text" name="Name"/>
+                </div>
+                <div class="form_elem">
+                    <label>Action : </label><input class="ed_col_3" type="text" name="Action"/>
+                </div>
+                <div class="form_elem">
+                    <label>Signal : </label><input class="ed_col_4" type="text" name="Signal"/>
+                </div>
+                <div class="form_btn">
+                    <input type="submit" value="Submit"/>
+                    <input type="button" class="cancel_btn" value="Cancel"/>
+                </div>
+            </form>
+        </div>
     </div>
 </section>
 {% include "views/Admin/_footer.html" %}

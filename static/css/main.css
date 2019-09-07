@@ -72,7 +72,7 @@ body {
     top: 0;
     display: block;
     padding: 20px;
-    width: 15%;
+    width: 340px;
     height: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -177,6 +177,7 @@ body {
 
 .Menu-item {
     margin: 0;
+    height: 50px;
 }
 
 .Menu-link {
@@ -226,4 +227,44 @@ body {
 .bottle_img {
     width: 200px;
     opacity: 0.3;
+}
+
+.edit_box{
+    width: 340px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -340px;
+    background: #333333db;
+}
+    .open {
+        transform:translateX(-340px);
+        transition: transform 0.6s, opacity 0.5s;
+    }
+    .hide {
+        transform:translateX(340px);
+        transition: transform 0.6s, opacity 0.5s;
+    }
+
+.edit_form{
+   position: absolute;          /* 位置指定 */
+   padding: 20px;               /* 余白指定 */
+   top:  0;                     /* 位置指定 */
+   bottom:  0;                  /* 位置指定 */
+   left:  0;                    /* 位置指定 */
+   right:  0;                   /* 位置指定 */
+   margin:  auto;
+}
+    .form_elem{
+        margin: 10px 10px;
+    }
+    .form_btn{
+        margin: 20px 10px;
+    }
+
+.ed_col_2,
+.ed_col_3,
+.ed_col_4
+{
+    width: 200px;
 }
