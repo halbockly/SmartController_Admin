@@ -13,7 +13,7 @@ body {
 
 }
 
-#main,#buttons,#status {
+#main,#kaden {
     text-align: center;
 }
 
@@ -57,8 +57,8 @@ body {
     margin: 5px;
 }
 
-#buttons .dt_col_2,
-#buttons .dt_col_4{
+#kaden .dt_col_2,
+#kaden .dt_col_4{
     width: 200px;
 }
 
@@ -77,7 +77,7 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    z-index: 100;
+    z-index: 0;
 }
 
 .MenuHeader {
@@ -232,7 +232,7 @@ body {
 .edit_box{
     width: 340px;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -340px;
     background: #333333db;

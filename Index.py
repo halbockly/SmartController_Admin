@@ -2,7 +2,7 @@
 import json
 import os
 from bottle import TEMPLATE_PATH, jinja2_template as template, redirect
-from bottle import run, route, static_file
+from bottle import run, route, static_file, request
 
 # index.pyが設置されているディレクトリの絶対パスを取得
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -20,32 +20,26 @@ def index():
     return template('views/Admin/Home')
 
 
-@route('/Buttons')
+@route('/Kaden')
 def buttons():
-    with open("data/buttons.json", "r") as f:
+    with open("data/kaden.json", "r") as f:
         data = json.load(f)
-    return template('views/Admin/Buttons', data=data)
+    return template('views/Admin/Kaden', data=data)
 
-
-@route('/Status')
-def status():
-    with open("data/status.json", "r") as f:
-        data = json.load(f)
-    return template('views/Admin/Status', data=data)
-
-
-@route('/SaveButton')
+@route('/saveKaden', method="POST")
 def save_button():
-    with open("data/status.json", "r") as f:
-        data = json.load(f)
-    redirect("/")
+    name = request.forms.name
+    status = request.forms.status
+    id = request.forms.id
 
-
-@route('/SaveStatus')
-def save_status():
-    with open("data/status.json", "r") as f:
+    path = "data/kaden.json"
+    with open(path, "r") as f:
         data = json.load(f)
-    redirect("/")
+        data[id]["name"] = name
+        data[id]["status"] = status
+        with open(path, 'w', encoding='utf8') as outfile:
+            json.dump(data, outfile, indent=4, ensure_ascii=False)
+    redirect("/Kaden")
 
 if __name__ == "__main__":
     run(host="localhost", port=8080, debug=True, reloader=True)
