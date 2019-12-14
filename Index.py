@@ -22,7 +22,7 @@ def index():
 
 @route('/Kaden')
 def buttons():
-    with open("data/kaden.json", "r") as f:
+    with open("data/kaden.json", "r", encoding='utf8') as f:
         data = json.load(f)
     return template('views/Admin/Kaden', data=data)
 
@@ -33,7 +33,7 @@ def save_button():
     id = request.forms.id
 
     path = "data/kaden.json"
-    with open(path, "r") as f:
+    with open(path, "r", encoding='utf8') as f:
         data = json.load(f)
         data[id]["name"] = name
         data[id]["status"] = status

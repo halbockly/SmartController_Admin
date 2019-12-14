@@ -12,8 +12,8 @@
         {% for item in data %}
         <div class="dt_item">
             <div class="dt_col_1">{{ item }}</div>
-            <div class="dt_col_2">{{ data[item]["name"] }}</div>
-            <div class="dt_col_3">{{ data[item]["status"] }}</div>
+            <div class="dt_col_2">{{ data[item].name }}</div>
+            <div class="dt_col_3">{{ data[item].status }}</div>
 <!--            <div class="dt_col_4">{{ data[item]["signal"] }}</div>-->
             <div class="dt_col_5">
                 <button class="edit_btn">Edit</button>
