@@ -2,12 +2,12 @@
     "1": {
         "name": "[エアコン]　living A",
         "signal": "000000000000000000",
-        "status": "0"
+        "status": "1"
     },
     "2": {
         "name": "[エアコン]　living B",
         "signal": "000000000000000001",
-        "status": "0"
+        "status": "1"
     },
     "3": {
         "name": "[エアコン]　living C",
